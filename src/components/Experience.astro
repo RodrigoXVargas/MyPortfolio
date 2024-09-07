@@ -1,0 +1,34 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+import PythonIcon from './icons/Python.astro'
+import DjangoIcon from './icons/Django.astro'
+import JavascriptIcon from './icons/Javascript.astro'
+import TypescriptIcon from './icons/Typescript.astro'
+import ExpressIcon from './icons/Express.astro'
+import SequelizeIcon from './icons/Sequelize.astro'
+import PostgreSQLIcon from './icons/PostgreSQL.astro'
+
+const EXPERIENCE = [
+  {
+    date: "Enero 2024 - Mayo 2024",
+    title: "RST Argentina: (Prácticas Profesionales):",
+    description: "A cargo del desarrollo del Backend para dos aplicaciones web para gestión de turnos médicos, chatbot y prescripción de recetas médicas",
+    techs: [
+      PythonIcon, DjangoIcon, JavascriptIcon, TypescriptIcon, ExpressIcon, SequelizeIcon, PostgreSQLIcon
+    ]
+  },
+  
+]
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">  
+    {
+        EXPERIENCE.map((experienceItem) =>(
+            <li class="mb-10 ms-4">
+                <ExperienceItem {...experienceItem}/>
+            </li>
+        ))
+    }                
+    
+</ol>
+
