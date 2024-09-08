@@ -6,21 +6,23 @@ import GithubIcon from '../components/icons/Github.astro';
 import MailIcon from '../components/icons/Mail.astro';
 import SuitCaseIcon from '../components/icons/SuitCase.astro';
 import CodeIcon from '../components/icons/Code.astro';
+import FileDownloadIcon from '../components/icons/FileDownload.astro';
 import SocialPill from '../components/SocialPill.astro'
 import SectionContainer from '../components/SectionContainer.astro';
 import NavIcons from '../components/NavIcons.astro';
 import Experience from '../components/Experience.astro';
+import Projects from '../components/Projects.astro';
 ---
 
-<Layout 
+<Layout
 	title="Porfolio de Rodrigo Vargas - Desarrollador y Programador Backend"
 	description='Porfolio de presentación para contratar a Rodrigo Vargas como desarrollador o programador'
 >
 	<main class="px-4">
-		<SectionContainer class="py-20 pb-30">
+		<SectionContainer id="about" class="pt-40 pb-32 scroll-mt-20">
 			<img 
 				class="rounded-full size-40 mb-4"
-				src="../../public/perfil Rodrigo Vargas.jpg" 
+				src="/perfil Rodrigo Vargas.jpg" 
 				alt="mi foto"
 			/>
 			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flew-row gap-x-4 pb-6 lg:pb-10">
@@ -33,7 +35,7 @@ import Experience from '../components/Experience.astro';
 					<Badge>Disponible para trabajar</Badge>
 				</a>
 			</h1>
-			<h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]" >
+			<h2 class="text-xl lg:text-2xl text-wrap max-w-[700px] mb-8" >
 				<span class="text-yellow-200" >Desarrollador Backend. </span>Recibido de la Universidad Tecnológica Nacional de Argentina. Mi objetivo profesional es crear soluciones de desarrollo reconocidas a nivel mundial.
 			</h2>
 			
@@ -52,9 +54,14 @@ import Experience from '../components/Experience.astro';
 					<MailIcon class="size-4 md:size-6"/>
 					rxvargas.92@gmail.com
 				</SocialPill>
+
+				<SocialPill href="/public/Rodrigo Vargas Backend.pdf" download>
+					<FileDownloadIcon class="size-4 md:size-6"/>
+					CV
+				</SocialPill>
 			</NavIcons>
 		</SectionContainer>
-		<SectionContainer id="experiencia">
+		<SectionContainer id="experiencia" class="scroll-mt-20">
 			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
 				<SuitCaseIcon class="size-7"/>
 				Experiencia Laboral
@@ -62,12 +69,12 @@ import Experience from '../components/Experience.astro';
 			<Experience />
 		</SectionContainer>
 
-		<SectionContainer id="experiencia">
+		<SectionContainer id="proyectos" class="scroll-mt-20">
 			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
 				<CodeIcon class="size-7"/>
 				Proyectos
 			</h2>
-			
+			<Projects/>
 		</SectionContainer>
 
 	</main>

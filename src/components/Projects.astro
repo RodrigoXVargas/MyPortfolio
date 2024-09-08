@@ -1,0 +1,111 @@
+---
+import JavaIcon from './icons/Java.astro'
+import SpringIcon from './icons/Spring.astro'
+import ReactIcon from './icons/React.astro'
+import SocketsIcon from './icons/Sockets.astro'
+import MVCIcon from './icons/MVC.astro'
+import MySQLIcon from './icons/MySQL.astro'
+import NextJSIcon from './icons/NextJS.astro'
+import TypescriptIcon from './icons/Typescript.astro'
+import SocialPill from './SocialPill.astro'
+
+const TAGS = {
+    JAVA: {
+        name: "Java",
+        icon: JavaIcon,
+    },
+    SPRING: {
+        name: "Spring Boot",
+        icon: SpringIcon,
+    },
+    REACT: {
+        name: "React",
+        icon: ReactIcon,
+    },
+    TYPESCRIPT: {
+        name: "Typescript",
+        icon: TypescriptIcon,
+    },
+    SOCKETS: {
+        name: "Sockets",
+        icon: SocketsIcon,
+    },
+    MVC: {
+        name: "MVC",
+        icon: MVCIcon,
+    },
+    MYSQL: {
+        name: "MySQL",
+        icon: MySQLIcon,
+    },
+    NEXTJS: {
+        name: "NextJS",
+        icon: NextJSIcon,
+    },
+
+}
+
+const PROJECTS = [
+    {
+        title: "Buen Sabor - WebApp",
+        description: "Este proyecto corresponde al final de la carrera en donde converge todo el conocimiento adquirido, tanto en la carrera como de manera autodidacta, y es un sitio creado para la administración de un restaurante y el pedido de comida en él, teniendo funcionalidades de administración de datos, personal y pedidos pudiendo satisfacer la necesidades de los distintos actuantes del sistema (Administrador, Cliente, Delivery, Cajero, Cocinero). En este proyecto estuve a cargo del área del Backend..",
+        github: "https://github.com/RodrigoXVargas/Buen-Sabor--Backend",
+        image: "/projects/buen-sabor.webp",
+        // tags: ['JAVA', 'Spring Boot', 'Spring Security', 'MySQL', 'Typescript', 'CSS', 'React JS']
+        tags: [TAGS.JAVA, TAGS.SPRING, TAGS.MYSQL, TAGS.TYPESCRIPT, TAGS.REACT],
+        tags2: [TAGS.MVC, TAGS.SOCKETS]
+    },
+    {
+        title: "Duende del Hilo - WebApp",
+        description: "Este proyecto fue una aplicacion web para los empleados y administración de un local de alquiler de disfraces, el cual contaba con manejo de inventario, generacion de facturas pdf y registro de usuarios para poder brindar un servicio personalizado",
+        github: "https://github.com/alejoaraya/duende-del-hilo",
+        image: "/projects/duende.webp",
+        tags: [TAGS.TYPESCRIPT, TAGS.NEXTJS, TAGS.REACT],
+        tags2: [TAGS.MVC]
+    },
+]
+---
+
+{
+    PROJECTS.map(({ title, description, github, tags, tags2, image}) => (
+        <article class="mb-20">
+            <div class="flex items-center">
+                <h3 class="text-2xl font-semibold text-yellow-200 mb-2 mr-4">
+                    {title}
+                </h3>
+                <SocialPill href={github}>
+					Repositorio
+				</SocialPill>
+            </div>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <ul class="flex gap-x-2 flex-row mb-4 gap-4 flex-wrap ">
+            {
+                tags.map((tag) =>(
+                    <li>
+                        <span class={`flex gap-x-2 rounded-full text-2xs py-1 px-2`}>
+                            <tag.icon class="size-6"/>
+                            {tag.name}
+
+                        </span>
+                    </li>
+                ))
+            }
+            </ul>
+            <ul class="flex gap-x-2 flex-row mb-4 gap-4 flex-wrap ">
+            {
+                tags2.map((tag) =>(
+                    <li>
+                        <span class={`flex gap-x-2 rounded-full text-2xs py-1 px-2`}>
+                            <tag.icon class="size-6"/>
+                            {tag.name}
+
+                        </span>
+                    </li>
+                ))
+            }
+            </ul>
+
+            <img class="rounded-xl shadow-2xl shadow-white/10 w-100 h-120 mb-8" src={image} alt={`Captura del proyecto ${image}`}/>
+        </article>
+    ))
+}
