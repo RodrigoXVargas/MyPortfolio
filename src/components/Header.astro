@@ -1,9 +1,20 @@
-<!-- <header class="flex justify-center items-center py-5 w-full xl:w-[1120px] mx-auto"> -->
-<header class="flex justify-center items-center py-5 w-full xl:w-[1120px] mx-auto ">
-    <nav class="fixed justify-center flex flex-row gap-x-10 flex-wrap opacity-80 py-20 w-full bg-[radial-gradient(ellipse_80%_80%_at_50%_20%,#560505,transparent)]"> 
+---
+interface Props {
+    titleA: string
+}
+
+const {titleA} = Astro.props
+const color = titleA==="Soporte" ? "#5e5e5e": "#7e0303"
+---
+
+
+<header class="relative z-20 flex justify-center items-center py-5 w-full xl:w-[1120px] mx-auto ">
+    <nav class=`fixed justify-center flex flex-row gap-x-10 flex-wrap opacity-80 py-20 w-full bg-[radial-gradient(ellipse_80%_80%_at_50%_20%,${color},transparent)]`> 
         <a href="#top">Inicio</a>
         <a href="#about">Sobre mí</a>
         <a href="#experiencia">Experiencia</a>
-        <a href="#proyectos">Proyectos</a>
+        {titleA==="Soporte" ? <a href="#proyectos">Proyectos</a> : null}
+        <a href="#educacion">Educación</a>        
+        <a href=`/${titleA==="Soporte" ? "soporte": ""}`>Porfolio {titleA}</a>
     </nav>
 </header>

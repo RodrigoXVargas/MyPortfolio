@@ -6,9 +6,12 @@ import '@fontsource-variable/onest';
 interface Props {
 	title: string;
 	description: string
+	foto: string
+	titleA: string
 }
 
-const { description, title } = Astro.props;
+const { description, title, foto, titleA } = Astro.props;
+const color = titleA==="Soporte" ? "5e5e5e": "7e0303"
 ---
 
 <!doctype html>
@@ -17,17 +20,17 @@ const { description, title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/perfil Rodrigo Vargas.jpg" />
+		<link rel="icon" type="image/svg+xml" href={foto} />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body id="top">
-		<!-- <div class="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#7e0303_100%)]"></div> -->
-		<div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,#7e0303,rgba(255,255,255,0))]"></div>
-		<Header />
+		<div class="absolute top-0 z-[-2] h-screen w-screen" 
+		style={`background: radial-gradient(ellipse 80% 80% at 50% -20%, #${color}, rgba(255, 255, 255, 0))`}></div>
+		<Header titleA={titleA}/>
 		<slot />
 	</body>
-	<Footer/>
+	<Footer color={color}/>
 </html>
 
 <style is:global>

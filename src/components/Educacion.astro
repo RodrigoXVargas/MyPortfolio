@@ -1,0 +1,26 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+const EDUCACION = [
+  {
+    date: "2021 - 2023",
+    title: "UTN Regional Mendoza: Técnico Superior en Programación",
+    description: "A lo largo de mi formación, adquirí conocimientos en lenguajes como Java, Python, C, y JavaScript. Además, me especialicé en desarrollo web y de aplicaciones, tanto en frontend como backend, con tecnologías como Spring Boot, Hibernate, React, y Angular. También trabajé con bases de datos relacionales, metodologías ágiles y control de versiones con Git.",
+    techs: null
+  },  
+  
+]
+
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">  
+    {
+      EDUCACION.map((experienceItem) =>(
+          <li class="mb-10 ms-4">
+              <ExperienceItem {...experienceItem}/>
+          </li>
+      ))
+    }               
+    
+</ol>
+

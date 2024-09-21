@@ -16,16 +16,16 @@ import Educacion from '../components/Educacion.astro';
 ---
 
 <Layout
-	title="Porfolio de Rodrigo Vargas - Desarrollador y Programador Backend"
-	description='Porfolio de presentación para contratar a Rodrigo Vargas como desarrollador o programador'
-	foto='/fotos/perfil Rodrigo Vargas gris.jpg'
-	titleA='Soporte'
+	title="Porfolio de Rodrigo Vargas - Soporte IT y Helpdesk"
+	description='Porfolio de presentación para contratar a Rodrigo Vargas como Soporte IT o Helpdesk'
+	foto='/fotos/perfil Rodrigo Vargas.jpg'
+	titleA='Programador'
 >
 	<main class="px-4">
 		<SectionContainer id="about" class="pt-40 pb-32 scroll-mt-20">
 			<img 
 				class="rounded-full size-40 mb-4"
-				src="/fotos/perfil Rodrigo Vargas gris.jpg" 
+				src="/fotos/perfil Rodrigo Vargas.jpg" 
 				alt="mi foto"
 			/>
 			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flew-row gap-x-4 pb-6 lg:pb-10">
@@ -39,7 +39,7 @@ import Educacion from '../components/Educacion.astro';
 				</a>
 			</h1>
 			<h2 class="text-xl lg:text-2xl text-wrap max-w-[700px] mb-8" >
-				<span class="text-yellow-200" >Desarrollador Backend. </span>Recibido de la Universidad Tecnológica Nacional de Argentina. Mi objetivo profesional es crear soluciones de desarrollo reconocidas a nivel mundial.
+				<span class="text-yellow-200" >Soporte IT / Helpdesk. </span>Profesional con 4 años de experiencia en soporte técnico, especializado en la resolución de problemas de hardware, software y administración de sistemas, tanto de forma remota como presencial.
 			</h2>
 			
 			<NavIcons>
@@ -58,7 +58,7 @@ import Educacion from '../components/Educacion.astro';
 					rxvargas.92@gmail.com
 				</SocialPill>
 
-				<SocialPill href="/cvs/Rodrigo Vargas Backend.pdf" download="Rodrigo Vargas Backend.pdf">
+				<SocialPill href="/cvs/Rodrigo Vargas - Soporte.pdf" download="Rodrigo Vargas - Soporte.pdf">
 					<FileDownloadIcon class="size-4 md:size-6"/>
 					CV
 				</SocialPill>
@@ -69,15 +69,7 @@ import Educacion from '../components/Educacion.astro';
 				<SuitCaseIcon class="size-7"/>
 				Experiencia Laboral
 			</h2>
-			<Experience programador={true} soporte={false}/>
-		</SectionContainer>
-
-		<SectionContainer id="proyectos" class="scroll-mt-20 mt-24">
-			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-				<CodeIcon class="size-7"/>
-				Proyectos
-			</h2>
-			<Projects/>
+			<Experience programador={false} soporte={true}/>
 		</SectionContainer>
 
 		<SectionContainer id="educacion" class="scroll-mt-20 mt-24">
