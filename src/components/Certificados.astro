@@ -1,0 +1,31 @@
+---
+
+
+const CERTIFICADOS = [
+    {
+        title: "Curso Profesional Java - Codigo Facilito",
+        description: "Certificado Profesional de Java proporcionado por Codigo Facilito por terminar 6 horas de cursado y rendido en examen. Este curso lo hice para refrescar el conocimiento adquirido tanto en la facultad como de manera autodidacta.",
+        image: "/certificados/cert-java-codigo-facilito.jpg",
+    },
+    {
+        title: "Curso Microservicios con Spring Cloud - TodoCode",
+        description: "Este certificado es por terminar un curso pago de Microservicios con Java y Spring Cloud, en el que adquirí conocimiento teórico-práctico de programación con arquitectura de microservicios, la interconexión de ellos y patrones de diseño para solucionar problemáticas, como Service Registry-Service Discovery, Load Balancing, Circuit Breaker, Api Gateway y Config Server. Como adicional del curso aprendí de forma básica a desplegarlos con Docker.",
+        image: "/certificados/cert-microservicios-todocode.jpg",
+    },
+]
+
+---
+
+{
+    CERTIFICADOS.map(({ title, description, image}) => (
+        <article class="mb-20">
+            <div class="flex items-center">
+                <h3 class="text-2xl font-semibold text-yellow-200 mb-2 mr-4">
+                    {title}
+                </h3>
+            </div>
+            <p class="text-base mb-4 text-pretty">{description}</p>
+            <img class="rounded-xl shadow-2xl shadow-white/10 w-100 h-120 mb-8" src={image} alt={`Captura del proyecto ${image}`}/>
+        </article>
+    ))
+}
