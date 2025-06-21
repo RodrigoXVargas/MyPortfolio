@@ -24,9 +24,9 @@ const color = titleA==="Soporte" ? "5e5e5e": "7e0303"
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body id="top">
-		<div class="absolute top-0 z-[-2] h-screen w-screen" 
-		style={`background: radial-gradient(ellipse 80% 80% at 50% -20%, #${color}, rgba(255, 255, 255, 0))`}></div>
+	<body id="top" class="bg-[#031A29] mx-10">
+		<!-- <div class="absolute top-0 z-[-2] h-screen w-screen" 
+		style={`background: radial-gradient(ellipse 80% 80% at 50% -20%, #${color}, rgba(255, 255, 255, 0))`}></div> -->
 		<Header titleA={titleA}/>
 		<slot />
 	</body>
@@ -54,5 +54,14 @@ const color = titleA==="Soporte" ? "5e5e5e": "7e0303"
 			scroll-behavior: auto;
 		}
 	}
+
+	/* src/styles/global.css */
+.no-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
 
 </style>

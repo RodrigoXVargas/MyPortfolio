@@ -1,7 +1,17 @@
 ---
+import EmblaCarousel from "./EmblaCarousel"
+import type { EmblaOptionsType } from 'embla-carousel'
 
+import "../styles/embla.css"
+import ModalCert from "./ModalCert";
 
-const CERTIFICADOS = [
+interface Certificado {
+  title: string;
+  description: string;
+  image: string;
+}
+
+const CERTIFICADOS: Certificado[] = [
     {
         title: "Curso Profesional Java - Codigo Facilito",
         description: "Certificado Profesional de Java proporcionado por Codigo Facilito por terminar 6 horas de cursado y rendido en examen. Este curso lo hice para refrescar el conocimiento adquirido tanto en la facultad como de manera autodidacta.",
@@ -12,20 +22,32 @@ const CERTIFICADOS = [
         description: "Este certificado es por terminar un curso pago de Microservicios con Java y Spring Cloud, en el que adquirí conocimiento teórico-práctico de programación con arquitectura de microservicios, la interconexión de ellos y patrones de diseño para solucionar problemáticas, como Service Registry-Service Discovery, Load Balancing, Circuit Breaker, Api Gateway y Config Server. Como adicional del curso aprendí de forma básica a desplegarlos con Docker.",
         image: "/certificados/cert-microservicios-todocode.jpg",
     },
+    {
+        title: "Curso de Python Profesional - Codigo Facilito",
+        description: "Certificado de finalización de Curso de Python Profesional de CódigoFacilito en donde refresqué el conocimiento y aprendí algunas cosas sobre la base de este lenguaje.",
+        image: "/certificados/curso python.jpeg",
+    },
+    {
+        title: "Curso de Instructor Spring Boot - UTN Buenos Aires",
+        description: "Certificado de finalización de Curso de Instructor Spring Boot donde se abordó temas de pedagogía, habilidades blandas y técnicas para poder estar más preparados como instructores y un trabajo práctico final en donde pudimos aplicar todo lo que vimos en la formación.",
+        image: "/certificados/curso instructor spring boot.jpeg",
+    },
+    {
+        title: "Curso Profesional de GIT - Código Facilito",
+        description: "Certificado de finalización de Curso Profesional de GIT, donde refresqué conocimiento sobre esta tecnología de control de versiones y aprendí nuevas formas de utilizarla.",
+        image: "/certificados/curso git.jpg",
+    }
+
 ]
 
+const OPTIONS: EmblaOptionsType = { loop: true }
 ---
 
-{
-    CERTIFICADOS.map(({ title, description, image}) => (
-        <article class="mb-20">
-            <div class="flex items-center">
-                <h3 class="text-2xl font-semibold text-yellow-200 mb-2 mr-4">
-                    {title}
-                </h3>
-            </div>
-            <p class="text-base mb-4 text-pretty">{description}</p>
-            <img class="rounded-xl shadow-2xl shadow-white/10 w-100 h-120 mb-8" src={image} alt={`Captura del proyecto ${image}`}/>
-        </article>
-    ))
-}
+<EmblaCarousel client:load certificados={CERTIFICADOS} options={OPTIONS}/>
+
+
+
+
+
+
+
