@@ -7,28 +7,19 @@ import TypescriptIcon from './icons/Typescript.astro'
 import ExpressIcon from './icons/Express.astro'
 import SequelizeIcon from './icons/Sequelize.astro'
 import PostgreSQLIcon from './icons/PostgreSQL.astro'
+import Java from "./icons/Java.astro"
+import Spring from "./icons/Spring.astro"
+import MySQL from "./icons/MySQL.astro"
 
-const EXPERIENCESOPORTE = [
-  {
-    date: "Agosto 2023 - Actualidad",
-    title: "KONECTA: Soporte IT / Helpdesk (Presencial)",
-    description: "Soporte técnico presencial, resolución de incidencias de conectividad y software. Gestión de tickets e instalación de equipos y software. Gestión de inventario/stock",
-    techs: null
-  },  
-  {
-    date: "Abril 2020 - Agosto 2023",
-    title: "KONECTA: Soporte IT / Helpdesk (Remoto)",
-    description: "Soporte técnico remoto para empleados, implementando soluciones de seguridad y acceso remoto. Diagnóstico y resolución de problemas mediante herramientas remotas. Gestión de tickets y configuración de equipos vía remoto",
-    techs: null
-  },
-  {
-    date: "Enero 2013 - Abril 2020",
-    title: "KONECTA: Telemarketer (At. al cliente y Soporte técnico)",
-    description: "Atención al cliente, gestión de reclamaciones y soporte general. Negociación y manejo de llamadas",
-    techs: null
-  }
-]
 const EXPERIENCEDEV = [
+  {
+    date: "Mayo 2024 - Actualidad",
+    title: "Desarrollador Backend Freelance",
+    description: "Desarrollo de APIs para proyectos web en colaboración con Desarrollador Frontend.",
+    techs: [
+      Java, Spring, TypescriptIcon,  MySQL, PostgreSQLIcon
+    ]
+  },
   {
     date: "Enero 2024 - Mayo 2024",
     title: "RST Argentina: (Prácticas Profesionales):",
@@ -36,27 +27,14 @@ const EXPERIENCEDEV = [
     techs: [
       PythonIcon, DjangoIcon, JavascriptIcon, TypescriptIcon, ExpressIcon, SequelizeIcon, PostgreSQLIcon
     ]
-  },
+  }
+  
 ]
-
-interface Props {
-  programador: boolean
-  soporte: boolean
-}
-
-const {programador, soporte} = Astro.props
 ---
 
 <ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">  
     {
-      soporte && EXPERIENCESOPORTE.map((experienceItem) =>(
-          <li class="mb-10 ms-4">
-              <ExperienceItem {...experienceItem}/>
-          </li>
-      ))
-    }
-    {
-      programador && EXPERIENCEDEV.map((experienceItem) =>(
+      EXPERIENCEDEV.map((experienceItem) =>(
           <li class="mb-10 ms-4">
               <ExperienceItem {...experienceItem}/>
           </li>
