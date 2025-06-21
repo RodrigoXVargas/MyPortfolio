@@ -1,20 +1,15 @@
 ---
 import Badge from '../components/Badge.astro';
 import Layout from '../layouts/LayoutDev.astro';
-import LinkedInIcon from '../components/icons/LinkedIn.astro';
-import GithubIcon from '../components/icons/Github.astro';
-import MailIcon from '../components/icons/Mail.astro';
 import SuitCaseIcon from '../components/icons/SuitCase.astro';
 import CodeIcon from '../components/icons/Code.astro';
-import FileDownloadIcon from '../components/icons/FileDownload.astro';
-import SocialPill from '../components/SocialPill.astro'
 import SectionContainer from '../components/SectionContainer.astro';
-import NavIcons from '../components/NavIcons.astro';
 import Experience from '../components/Experience.astro';
 import Projects from '../components/Projects.astro';
 import Educacion from '../components/Educacion.astro';
 import Certificados from '../components/Certificados.astro';
 import Cert from '../components/icons/Cert.astro';
+import ModalCert from '../components/ModalCert';
 ---
 
 <Layout
@@ -23,63 +18,52 @@ import Cert from '../components/icons/Cert.astro';
 	foto='/fotos/perfil Rodrigo Vargas gris.jpg'
 	titleA='Soporte'
 >
-	<main class="px-4">
-		<SectionContainer id="about" class="pt-40 pb-32 scroll-mt-20">
-			<!-- <img 
-				class="rounded-full size-40 mb-4"
-				src="/fotos/perfil Rodrigo Vargas gris.jpg" 
-				alt="mi foto"
-			/> -->
-			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flew-row gap-x-4 pb-6 lg:pb-10">
-				Hola, soy Rodrigo <a
-				href="https://www.linkedin.com/in/rodrigoxvargas/"
-				target="_blank"
-				rel="noopener"
-				class="flex justify-center items-center"
-				>
-					<Badge>Disponible para trabajar</Badge>
-				</a>
-			</h1>
-			<h2 class="text-base lg:text-base text-wrap max-w-[700px] mb-8" >
-				<span class="text-yellow-200" >Desarrollador Backend. </span>Recibido de la Universidad Tecnológica Nacional de Argentina. Mi objetivo profesional es crear soluciones de desarrollo reconocidas a nivel mundial.
-			</h2>
-			
-			<NavIcons>
-				<SocialPill href="https://www.linkedin.com/in/rodrigoxvargas">
-					<LinkedInIcon class="size-4 md:size-6"/>
-					LinkedIn
-				</SocialPill>
-
-				<SocialPill href="https://github.com/RodrigoXVargas">
-					<GithubIcon class="size-4 md:size-6"/>
-					Github
-				</SocialPill>
-
-				<SocialPill href="mailto:rxvargas.92@gmail.com">
-					<MailIcon class="size-0 md:size-2"/>
-					rxvargas.92@gmail.com
-				</SocialPill>
-
-				<SocialPill href="/cvs/Rodrigo Vargas CV.pdf" download="Rodrigo Vargas CV.pdf">
-					<FileDownloadIcon class="size-4 md:size-6"/>
-					CV
-				</SocialPill>
-			</NavIcons>
+	<main class="">
+		<SectionContainer id="about" class="pt-60 pb-52 scroll-mt-20 flex justify-center">
+			<section class="flex items-center">
+				<img 
+					class="rounded-full size-40 mb-4"
+					src="/fotos/perfil Rodrigo Vargas gris.jpg" 
+					alt="mi foto"
+				/>
+				<span class="pl-5">
+					<span class="flex items-center pb-5">
+						<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flew-row gap-x-4">
+							Hola, soy Rodrigo 
+						</h1>
+						<a
+						href="https://www.linkedin.com/in/rodrigoxvargas/"
+						target="_blank"
+						rel="noopener"
+						class="flex justify-center items-center pl-4"
+						>
+							<Badge>
+								Más sobre mi
+							</Badge>
+						</a>
+					</span>
+					<h2 class="text-base lg:text-base text-wrap max-w-[700px] mb-8" >
+						<span class="text-yellow-200" >Desarrollador Backend </span>con sólidos conocimientos en Java, Spring y otras tecnologías. Enfocado en construir APIs claras, eficientes y mantenibles, con atención a la arquitectura y escalabilidad.
+					</h2>
+				</span>
+				
+			</section>
 		</SectionContainer>
-		<SectionContainer id="experiencia" class="scroll-mt-20">
+
+		<SectionContainer id="experiencia" class="scroll-mt-20 flex items-center justify-center">
 			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
 				<SuitCaseIcon class="size-7"/>
 				Experiencia Laboral
 			</h2>
-			<Experience programador={true} soporte={false}/>
+			<Experience/>
 		</SectionContainer>
-
-		<SectionContainer id="certificados" class="scroll-mt-20">
+		
+		<SectionContainer id="educacion" class="scroll-mt-20 mt-24">
 			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-				<Cert class="size-7"/>
-				Certificados
+				<SuitCaseIcon class="size-7"/>
+				Educación
 			</h2>
-			<Certificados/>
+			<Educacion/>
 		</SectionContainer>
 
 		<SectionContainer id="proyectos" class="scroll-mt-20 mt-24">
@@ -90,14 +74,14 @@ import Cert from '../components/icons/Cert.astro';
 			<Projects/>
 		</SectionContainer>
 
-		<SectionContainer id="educacion" class="scroll-mt-20 mt-24">
-			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-				<SuitCaseIcon class="size-7"/>
-				Educación
+		<SectionContainer id="certificados" class="mt-24">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center justify-center">
+				<Cert class="size-7"/>
+				Certificados y Cursos
 			</h2>
-			<Educacion/>
+			<Certificados/>
 		</SectionContainer>
-
+		
 	</main>
 </Layout>
 

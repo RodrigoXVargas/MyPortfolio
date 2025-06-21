@@ -1,14 +1,9 @@
 ---
 import SectionContainer from "./SectionContainer.astro";
 
-interface Props {
-    color: string
-}
-
-const {color} = Astro.props
 ---
 
-<footer class=`rounded-lg shadow m-4` style={`background: radial-gradient(ellipse 80% 80% at 50% 80%, #${color}, rgba(255, 255, 255, 0))`} >
+<footer class=`rounded-lg shadow m-4`>
     <SectionContainer >
     <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
         <span class="text-sm text-gray-300 sm:text-center dark:text-gray-300">© 2024 <a href="/" class="hover:underline">Rodrigo Vargas</a>.
@@ -24,9 +19,3 @@ const {color} = Astro.props
     </div>
 </SectionContainer>
 </footer>
-<!-- <style>
-    footer {
-        background: rgb(126,3,3);
-background: radial-gradient(, rgba(126,3,3,1) 0%, rgba(10,10,10,1) 100%);
-    }
-</style> -->
