@@ -2,6 +2,7 @@
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import '@fontsource-variable/onest';
+import '../styles/global.css';
 
 interface Props {
 	title: string;
@@ -30,8 +31,8 @@ const color = titleA==="Soporte" ? "5e5e5e": "7e0303"
 		style={`background: radial-gradient(ellipse 80% 80% at 50% -20%, #${color}, rgba(255, 255, 255, 0))`}></div> -->
 		<Header titleA={titleA}/>
 		<slot />
+		<Footer color={color}/>
 	</body>
-	<Footer color={color}/>
 </html>
 
 <style is:global>
